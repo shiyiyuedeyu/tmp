@@ -3,6 +3,7 @@ import urllib.request
 import urllib.error
 import time
 import json
+import base64
 #import requests
 
 http_url = 'https://api-cn.faceplusplus.com/facepp/v1/3dface'
@@ -56,8 +57,8 @@ try:
     # for example: json.loads(qrount.decode('utf-8'))
     data = json.loads(qrcont.decode('utf-8'))
     print(data['request_id'])
-    with open("1.obj", "wb") as code:
-        code.write(data['obj_file'].encode('utf-8'))
+    with open("face.obj", "wb") as code:
+        code.write(base64.b64decode(data['obj_file'].encode('utf-8')))
     # print(qrcont.decode('utf-8'))
 except urllib.error.HTTPError as e:
     print(e.read().decode('utf-8'))
