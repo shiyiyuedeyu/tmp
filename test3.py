@@ -3,6 +3,7 @@ import urllib.request
 import urllib.error
 import time
 import json
+#import requests
 
 http_url = 'https://api-cn.faceplusplus.com/facepp/v1/3dface'
 key = "_q3uQ33z3SFxtXvJfBObGDsuK3Guzp4y"
@@ -47,13 +48,14 @@ req.add_header('Content-Type', 'multipart/form-data; boundary=%s' % boundary)
 try:
     # post data to server
     resp = urllib.request.urlopen(req, timeout=5)
-    print(data.loads(resp))
     # get response
-    #qrcont = resp.read()
+    qrcont = resp.read()
     #with open("code2.zip", "wb") as code:
     #    code.write(qrcont)
     # if you want to load as json, you should decode first,
     # for example: json.loads(qrount.decode('utf-8'))
+    json.loads(qrount.decode('utf-8'))
+    print(qrcont.decode('utf-8'))
     # print(qrcont.decode('utf-8'))
 except urllib.error.HTTPError as e:
     print(e.read().decode('utf-8'))
