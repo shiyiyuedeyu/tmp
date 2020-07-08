@@ -48,8 +48,8 @@ try:
     resp = urllib.request.urlopen(req, timeout=5)
     # get response
     qrcont = resp.read()
-    with open("code2.zip", "wb") as code:
-        code.write(qrcont)
+    #with open("code2.zip", "wb") as code:
+    #    code.write(qrcont)
     # if you want to load as json, you should decode first,
     # for example: json.loads(qrount.decode('utf-8'))
     # print(qrcont.decode('utf-8'))
