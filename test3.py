@@ -56,6 +56,8 @@ try:
     # for example: json.loads(qrount.decode('utf-8'))
     data = json.loads(qrcont.decode('utf-8'))
     print(data['request_id'])
+    with open("1.obj", "wb") as code:
+        code.write(data['obj_file'])
     # print(qrcont.decode('utf-8'))
 except urllib.error.HTTPError as e:
     print(e.read().decode('utf-8'))
