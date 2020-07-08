@@ -54,7 +54,7 @@ try:
     #    code.write(qrcont)
     # if you want to load as json, you should decode first,
     # for example: json.loads(qrount.decode('utf-8'))
-    json.loads(qrount.decode('utf-8'))
+    json.loads(qrcont.decode('utf-8'))
     print(qrcont.decode('utf-8'))
     # print(qrcont.decode('utf-8'))
 except urllib.error.HTTPError as e:
